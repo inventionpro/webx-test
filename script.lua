@@ -3,7 +3,7 @@ local aa = 0;
 get('btn').on_click(function()
     aa = aa+1;
     fetch({
-        url = "https://example.com",
+        url = "https://fsh.plus",
         method = "GET",
         headers = { ["Content-Type"] = "application/json" },
         body = ''
