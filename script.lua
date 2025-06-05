@@ -1,5 +1,4 @@
-
-    print('start')
+print('start')
 get('search').on_click(function()
     print('click')
     local res = fetch({
@@ -8,8 +7,8 @@ get('search').on_click(function()
         headers = { ["Content-Type"] = "application/json" },
         body = ''
     })
-
-    print('recive')
+    print('recived')
+    print(res)
     get('title').set_contents(res.title)
     get('text').set_contents(res.data)
     print('changed')
