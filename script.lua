@@ -1,12 +1,16 @@
-local aa = 0;
 
-get('btn').on_click(function()
-    aa = aa+1;
-    fetch({
-        url = "https://api.fsh.plus",
+    print('start')
+get('search').on_click(function()
+    print('click')
+    local res = fetch({
+        url = "https://api.fsh.plus/wikipedia?page=" .. get('query').get_contents(),
         method = "GET",
         headers = { ["Content-Type"] = "application/json" },
         body = ''
     })
-    get('amount').set_contents('clicked '..aa)
+
+    print('recive')
+    get('title').set_contents(res.title)
+    get('text').set_contents(res.data)
+    print('changed')
 end)
